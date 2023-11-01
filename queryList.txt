@@ -1,0 +1,199 @@
+// Check not added inventory items from a date  -------------------------------------------
+
+SELECT H.description ,H.sku, invLine.new_quantity as to_add_quantity, H.quantity as old_quantity, H.quantity + invLine.new_quantity as new_quantity
+FROM (SELECT D.sku, D.quantity AS new_quantity
+FROM invoice_line D, (SELECT invoice_line_no
+    FROM invoices_entry
+    WHERE invoices_id = (SELECT invoice_id
+        FROM invoices
+        WHERE date = '2022-02-12')) T
+WHERE D.inv_line_entry_no = T.invoice_line_no AND D.has_been_added_to_inventory = false) invLine,
+
+inventory_items H
+
+WHERE H.sku = invLine.sku
+
+// Check how many orders of a Specific date plus their prices and total -----------------
+
+SELECT D.menu_id, D.count, V.price AS "per one", D.count * V.price AS "Total"
+                FROM (SELECT menu_id, COUNT(menu_id)
+                      FROM (
+                               SELECT menu_id
+                               FROM order_menu_link
+                               WHERE order_id IN (
+                                   SELECT order_id AS "resp"
+                                   FROM "order"
+                                   WHERE order_date = '2022-02-13'
+                               )
+                           ) AS T
+                      GROUP BY menu_id) D
+                         JOIN (SELECT t1.menu_id, t1.price
+                               FROM menu t1
+                               WHERE menu_id IN (
+                                   SELECT menu_id
+                                   FROM (
+                                            SELECT menu_id
+                                            FROM order_menu_link
+                                            WHERE order_id IN (
+                                                SELECT order_id AS "resp"
+                                                FROM "order"
+                                                WHERE order_date = '2022-02-13'
+                                            )
+                                        ) AS T
+                                   GROUP BY menu_id
+                               )
+                ) V
+                              ON D.menu_id = V.menu_id
+
+// Check the total amount of money from specifc date --------------------------------
+
+        SELECT  sum(T."Total")
+            FROM (
+                SELECT D.menu_id, D.count, V.price AS "per one", D.count * V.price AS "Total"
+                FROM (SELECT menu_id, COUNT(menu_id)
+                      FROM (
+                               SELECT menu_id
+                               FROM order_menu_link
+                               WHERE order_id IN (
+                                   SELECT order_id AS "resp"
+                                   FROM "order"
+                                   WHERE order_date = '2022-02-13'
+                               )
+                           ) AS T
+                      GROUP BY menu_id) D
+                         JOIN (SELECT t1.menu_id, t1.price
+                               FROM menu t1
+                               WHERE menu_id IN (
+                                   SELECT menu_id
+                                   FROM (
+                                            SELECT menu_id
+                                            FROM order_menu_link
+                                            WHERE order_id IN (
+                                                SELECT order_id AS "resp"
+                                                FROM "order"
+                                                WHERE order_date = '2022-02-13'
+                                            )
+                                        ) AS T
+                                   GROUP BY menu_id
+                               )
+                ) V
+                              ON D.menu_id = V.menu_id
+            ) T;
+
+// Update the inventory based on the invoices of a specific date
+UPDATE inventory_items invI
+SET quantity = invQ.new_quantity
+FROM (SELECT H.description ,H.sku, invLine.new_quantity as to_add_quantity, H.quantity as old_quantity, H.quantity + invLine.new_quantity as new_quantity
+FROM (SELECT D.sku, D.quantity AS new_quantity
+FROM invoice_line D, (SELECT invoice_line_no
+    FROM invoices_entry
+    WHERE invoices_id = (SELECT invoice_id
+        FROM invoices
+        WHERE date = '2022-02-12')) T
+WHERE D.inv_line_entry_no = T.invoice_line_no AND D.has_been_added_to_inventory = false) invLine,
+
+inventory_items H
+
+WHERE H.sku = invLine.sku) invQ
+WHERE invI.sku = invQ.sku
+
+UPDATE invoice_line invL
+SET has_been_added_to_inventory = true
+FROM (SELECT H.description ,H.sku, invLine.new_quantity as to_add_quantity, H.quantity as old_quantity, H.quantity + invLine.new_quantity as new_quantity
+FROM (SELECT D.sku, D.quantity AS new_quantity
+FROM invoice_line D, (SELECT invoice_line_no
+    FROM invoices_entry
+    WHERE invoices_id = (SELECT invoice_id
+        FROM invoices
+        WHERE date = '2022-02-12')) T
+WHERE D.inv_line_entry_no = T.invoice_line_no AND D.has_been_added_to_inventory = false) invLine,
+
+inventory_items H
+
+WHERE H.sku = invLine.sku) invQ
+WHERE invQ.sku = invL.sku
+
+// Get number of food items use per date (chicken tender, fries)
+
+SELECT orderT.order_date, menFoLink.food_id, COUNT(menFoLink.food_id) as amount_orders
+
+FROM (SELECT  order_id, order_date
+    FROM "order"
+    WHERE order_date between '2022-02-13' AND '2022-02-19') orderT,
+    order_menu_link ordMenLink,
+    menu_food_link menFoLink
+
+WHERE orderT.order_id = ordMenLink.order_id AND
+    menFoLink.menu_id = ordMenLink.menu_id
+GROUP BY menFoLink.food_id, orderT.order_date
+
+// See which food id uses what inventory items
+
+SELECT invItem.description, fi.food_id, fi. ,fi.sku, amountOrder.amount_orders, fi.quantity_used_per_food
+FROM
+    (SELECT orderT.order_date, menFoLink.food_id, COUNT(menFoLink.food_id) as amount_orders
+
+    FROM (SELECT  order_id, order_date
+        FROM "order"
+        WHERE order_date between '2022-02-13' AND '2022-02-19') orderT,
+        order_menu_link ordMenLink,
+        menu_food_link menFoLink
+
+    WHERE orderT.order_id = ordMenLink.order_id AND
+        menFoLink.menu_id = ordMenLink.menu_id
+    GROUP BY menFoLink.food_id, orderT.order_date) amountOrder,
+    food_inventory fi,
+    inventory_items invItem
+
+WHERE amountOrder.food_id = fi.food_id
+
+GROUP BY fi.food_id, fi.sku, amountOrder.amount_orders, fi.quantity_used_per_food, invItem.description
+
+//Display the food_and_drinks table -------------------------------------------------
+        SELECT * FROM food_and_drinks;
+
+//Display the food_inventory table --------------------------------------------------
+        SELECT * FROM food_inventory;
+
+// Display the inventory_items table ------------------------------------------------
+        SELECT * FROM inventory_items;
+
+//Display the invoice_line table ----------------------------------------------------
+        SELECT * FROM invoice_line;
+
+//Display the invoices table --------------------------------------------------------
+        SELECT * FROM invoices;
+
+//Display the invoices_entry table --------------------------------------------------
+        SELECT * FROM invoices_entry;
+
+//Display the menu table ------------------------------------------------------------
+        SELECT * FROM menu;
+
+//Display the menu_food_link table --------------------------------------------------
+        SELECT * FROM menu_food_link;
+
+//Display the order table -----------------------------------------------------------
+        SELECT * FROM order;
+
+//Display the order_menu_link table -------------------------------------------------
+        SELECT * FROM order_menu_link;
+
+// Display Top 10 inventory entries by quantity -------------------------------------
+        SELECT * FROM inventory_items
+        ORDER BY quantity DESC
+        LIMIT 10; 
+
+// Display Top 10 inventory entries by lowest quantity ------------------------------
+        SELECT * FROM inventory_items
+        ORDER BY quantity ASC
+        LIMIT 10; 
+
+// Display All extra/utensil items for customers-------------------------------------
+        SELECT description, usage_category FROM inventory_items
+        WHERE usage_category LIKE '%Serving%'; 
+
+// Display Top 10 most expensive inventory items ------------------------------------
+        SELECT sku, description, quantity, price, quantity*price AS totalValue FROM inventory_items
+        ORDER BY totalValue DESC
+        LIMIT 10;

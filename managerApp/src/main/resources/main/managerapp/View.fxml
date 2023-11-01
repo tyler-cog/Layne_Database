@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="822.0" prefWidth="1134.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.managerapp.MainController">
+   <children>
+      <BorderPane prefHeight="830.0" prefWidth="1140.0">
+         <top>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <VBox prefHeight="730.0" prefWidth="284.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="addMenuButton" mnemonicParsing="false" prefHeight="112.0" prefWidth="279.0" text="Add Menu" />
+                  <Button fx:id="updateMenuButton" mnemonicParsing="false" prefHeight="110.0" prefWidth="279.0" text="Update Menu" />
+                  <Button fx:id="popularButton" mnemonicParsing="false" prefHeight="112.0" prefWidth="279.0" text="Order Popularity" />
+                  <Button fx:id="refreshButton" mnemonicParsing="false" prefHeight="112.0" prefWidth="279.0" text="Refresh" />
+                  <Button fx:id="invUsageButton" mnemonicParsing="false" prefHeight="112.0" prefWidth="279.0" text="Inventory Usage" />
+                  <Button fx:id="restockOperations" mnemonicParsing="false" prefHeight="112.0" prefWidth="279.0" text="Restock Operations" />
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ListView fx:id="menuList" prefHeight="730.0" prefWidth="746.0" />
+                  <ListView fx:id="inventoryList" prefHeight="730.0" prefWidth="671.0" />
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

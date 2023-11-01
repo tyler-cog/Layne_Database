@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainBorder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="678.0" prefWidth="1045.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.employee.MainController">
+   <left>
+      <VBox prefHeight="604.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="215.0" text="Categories" />
+            <VBox fx:id="catlist" prefHeight="497.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox prefHeight="74.0" prefWidth="1045.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXRadioButton text="RadioButton" />
+         </children></HBox>
+   </top>
+   <right>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="20.0" prefHeight="604.0" prefWidth="275.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="80.0" prefWidth="203.0" text="Checkout" />
+            <HBox prefHeight="441.0" prefWidth="203.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <JFXListView fx:id="checkID" minWidth="46.0" prefHeight="431.0" prefWidth="46.0" />
+                  <JFXListView fx:id="checkName" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="431.0" prefWidth="164.0" />
+                  <JFXListView fx:id="checkPrice" minWidth="50.0" prefHeight="431.0" prefWidth="81.0" />
+               </children>
+            </HBox>
+            <Label fx:id="totalLabel" text="\$0.00">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="87.0" prefWidth="203.0">
+               <children>
+                  <JFXButton fx:id="SB" style="-fx-background-color: #D2373D;" text="Button" />
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

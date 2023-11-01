@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.managerapp.restockInvController">
+   <right>
+      <VBox prefHeight="594.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="104.0" prefWidth="225.0">
+               <children>
+                  <JFXButton fx:id="updateInventoryButton" alignment="CENTER" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="240.0" ripplerFill="#862727" text="Update Inventory" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="104.0" prefWidth="225.0">
+               <children>
+                  <JFXButton fx:id="restockButton" alignment="CENTER" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="240.0" ripplerFill="#862727" text="Restock to FIll Level" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="114.0" prefHeight="104.0" prefWidth="225.0">
+               <children>
+                  <JFXButton fx:id="previewButton" alignment="CENTER" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="240.0" ripplerFill="#862727" text="Preview Restock Report" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="218.0" prefHeight="104.0" prefWidth="225.0">
+               <children>
+                  <JFXButton fx:id="commitButton" alignment="CENTER" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="240.0" ripplerFill="#862727" text="Commit" textAlignment="CENTER" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="322.0" prefHeight="104.0" prefWidth="225.0" />
+         </children></VBox>
+   </right>
+   <center>
+      <TableView fx:id="mainTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox fx:id="inputBox" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

@@ -1,0 +1,62 @@
+,Initial order ,,,,Date,2/12/2022,,,,,,
+,Description,SKU,Quantity,delivered,sold by,delivered by,quantity Multiplyer, price , Extended ,category,Invoice line #,Detailed description
+Food,,,,,,,,,,,,
+,Chicken breast,c1001,30,30,lb,case,20,$3.90 ,"$2,340.00 ",Cold,1,"raw unbreaded chicken breast, fresh, 20 lb cases 6 oz breast, cut to 1.5 oz per strip"
+,flour,d2001,8,8,each,bag,1,$19.50 ,$156.00 ,Dry,2,"AP flour, 50 lb sack"
+,salt,d2002,2,2,each,bag,1,$25.95 ,$51.90 ,Dry,3,"bulk sea salt, 50 lb bag"
+,black pepper,d2003,3,3,each,container,1,$30.00 ,$90.00 ,Dry,4,5 lb plastic jar
+,Fries,f3002,35,35,case,case,1,$30.90 ,"$1,081.50 ",Frozen,5,"30 lb case,  oz per serving"
+,Thick bread,d2004,14,14,Case,case,1,$37.99 ,$531.86 ,Dry,6,170 slices per case.
+,Potato Salad,c1002,15,15,each,each,1,$17.01 ,$255.15 ,Cold,7,"Spring Glen 5lb Dutch potato saled,"
+,Liquid margarine,c1003,6,6,4/case,case,1,$57.81 ,$346.86 ,Cold,8,"Liquid margarine, 4/case"
+,Garlic powder,d2005,3,3,each,each,1,$20.49 ,$61.47 ,Dry,9,Granulated garlic 5lb
+,Ranch,c1004,16,16,each,each,1,$39.98 ,$639.68 ,Cold,10,Ranch dressing 1 gallon
+,Ketchup-Lg container,d2006,6,6,6/case,case,1,$29.99 ,$179.94 ,Dry,11,"Red Gold fancy ketchup Jug with pump, 6/case"
+,Ketchup-packets,d2007,6,6,1000/case,case,1,$25.49 ,$152.94 ,Dry,12,"French's ketchup packets, 1000/case"
+,Mayo,d2008,9,9,4gal/case,case,1,$89.99 ,$809.91 ,Dry,13,"Hellmann's 1 gal Mayo, 5/case"
+,Tea bags,d2009,6,6,24/case,case,1,$29.49 ,$176.94 ,Dry,14,"Lipton tea bags, 24/case"
+,Sugar for tea,d2010,6,6,each,bag,1,$21.99 ,$131.94 ,Dry,15,"sugar, 25 lb bag"
+,Worcestershire Sauce,d2011,2,2,4gal/case,case,1,$47.49 ,$94.98 ,Dry,16,"worcestershire sauce, 4gal/case"
+,Sliced cheese,c1005,2,2,6blk/case,case,1,$88.38 ,$176.76 ,Cold,17,"American cheese slices160 slice/block, 6block"
+,Bacon slices,c1006,2,2,300slc/case,case,1,$57.44 ,$114.88 ,Cold,18,"Precooked bacon slices, 300/case"
+,Fryer oil,d2012,9,9,35lb bucket,bucket,1,$45.68 ,$411.12 ,Dry,19,"Fryer oil, 35 lb bucket"
+Bib,,,,,,,,,,,,
+,Jones-Dr Jones ,d2013,4,4,each,bag in box,1,$55.99 ,$223.96 ,Dry,25,Jones Dr Jones bag in box 3 gallon
+,Jones-Orange&Cream,d2014,4,4,each,bag in box,1,$55.99 ,$223.96 ,Dry,26,Jones Orange Cream bag in box 3 gallon
+,Jones-Root beer,d2015,4,4,each,bag in box,1,$55.99 ,$223.96 ,Dry,27,Jones root beer bag in box 3 gallon
+,Jones-Cola,d2016,4,4,each,bag in box,1,$55.99 ,$223.96 ,Dry,28,Jones cola bag in box 3 gallon
+,Jones-Lemon Lime,d2017,4,4,each,bag in box,1,$55.99 ,$223.96 ,Dry,29,Jones lemon lime bag in box 3 gallon
+,Jones-Sugar Free Cola,d2018,4,4,each,bag in box,1,$55.99 ,$223.96 ,Dry,30,Jones sugar free cola bag in box 3 gallon
+Bottles,,,,,,,,,,,,
+,Bottled Root Beer,d2019,6,6,24/case,case,1,$39.99 ,$239.94 ,Dry,31,Jones 12oz Root Beer Soda 24/case
+,Bottled Cream Soda,d2020,6,6,24/case,case,1,$39.99 ,$239.94 ,Dry,32,Jones 12oz Cream Soda 24/case
+,Bottled Orange & Cream,d2021,6,6,24/case,case,1,$39.99 ,$239.94 ,Dry,33,Jones 12oz Orange Cream Soda 24/case
+,Bottled Berry Lemonade,d2022,6,6,24/case,case,1,$39.99 ,$239.94 ,Dry,34,Jones 12oz Berry Lemonade Soda 24/case
+Serving,,,,,,,,,,,,
+,Straw,d2023,5,5,800/Pack,Pack,1,$19.99 ,$99.95 ,Dry,36,"7 3/4"" black wrapped straw 800/pack"
+,Drink lid,d2024,3,3,1000/case,case,1,$29.99 ,$89.97 ,Dry,37,Clear flat lid with straw slot 1000/case
+,10oz Cup,d2025,2,2,1000/case,case,1,$55.99 ,$111.98 ,Dry,38,10 oz clear cup 1000/case
+,16 oz Cup,d2026,3,3,1000/case,case,1,$68.49 ,$205.47 ,Dry,39,16 oz clear cup 1000/case
+,Napkin,d2027,2,2,6000/case,case,1,$36.49 ,$72.98 ,Dry,40,6.5x8.5 dispenser napkin 6000/case
+,Cutlery pack,d2028,6,6,500/case,case,1,$34.49 ,$206.94 ,Dry,41,Cutlery pack with napkin salt pepper
+,Basket liners,d2029,2,2,6000/case,case,1,$82.49 ,$164.98 ,Dry,42,"Basket liners, 6000/case"
+,2oz clear cup,d2030,2,2,2500/case,case,1,$40.99 ,$81.98 ,Dry,43,Sauce cup
+,2oz lid,d2031,2,2,2500/case,case,1,$47.99 ,$95.98 ,Dry,44,Sauce lid
+,5.5 oz clear cup,d2032,2,2,2500/case,case,1,$88.49 ,$176.98 ,Dry,45,Potato salad cup
+,5.5 oz lid,d2033,2,2,2500/case,pack,1,$48.49 ,$96.98 ,Dry,46,Potato salad lid
+,Hinged lid box sm,d2034,5,5,450/case,case,1,$67.97 ,$339.85 ,Dry,47,"Small togo box, 450/case"
+,Hinged lid box lg,d2035,8,8,200/case,case,1,$56.62 ,$452.96 ,Dry,48,"Large togo box, 200/case"
+Janitorial,,,,,,,,,,,,
+,Hand soap,d2037,4,4,8/case,case,1,$56.70 ,$226.80 ,Dry,50,Liquid hand soap in counter dispenser 12oz
+,Hand sanitizer,d2038,3,3,4/case,case,1,$88.88 ,$266.64 ,Dry,51,"Liter hand sanitizer, 4/case"
+,Dish soap,d2039,2,2,12/case,case,1,$27.99 ,$55.98 ,Dry,52,"Liquid dish soap 32oz, 12/case"
+,Paper towels,d2040,3,3,6roll/case,case,1,$23.99 ,$71.97 ,Dry,53,"Kraft roll paper towel 800ft/roll, 6roll/case"
+,gloves,d2041,5,5,1000/case,case,1,$7.99 ,$39.95 ,Dry,54,"Food service glove, 100/box, 10box/case"
+,trash can liners-small,d2042,1,1,1000/case,case,1,$29.49 ,$29.49 ,Dry,55,"Can liner 15 gal, 1000/case"
+,trash can liners-lg,d2043,1,1,50/case,case,1,$28.99 ,$28.99 ,Dry,56,"Lg can liner 45 gal, 50/case"
+,toilet paper,d2044,2,2,96 roll/case,case,1,$72.99 ,$145.98 ,Dry,57,"Toilet paper, 2ply 500sheet/roll"
+,Surface cleaner,d2045,2,2,12/case,case,1,$52.49 ,$104.98 ,Dry,58,"Spray cleaner, 32oz/12/case"
+,Floor cleaner,d2046,2,2,90/tub,tub,1,$23.49 ,$46.98 ,Dry,59,"Floor cleaner .5oz pack, 90pk/tub"
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,Case/invoice total,,197,,,,,,"$8,673.41 ",,,

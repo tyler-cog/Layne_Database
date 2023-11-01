@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="564.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.managerapp.updateMenuController">
+    <children>
+        <BorderPane prefHeight="564.0" prefWidth="642.0">
+            <center>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label prefHeight="40.0" prefWidth="80.0" text="Menu_id" />
+                                <TextField fx:id="idField" text="idFi" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label prefHeight="40.0" prefWidth="80.0" text="name" />
+                                <TextField fx:id="nameField" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label prefHeight="40.0" prefWidth="80.0" text="description" />
+                                <TextField fx:id="descriptionField" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label prefHeight="40.0" prefWidth="80.0" text="price" />
+                                <TextField fx:id="priceField" />
+                            </children>
+                        </HBox>
+                        <Button fx:id="submitButton" mnemonicParsing="false" prefHeight="44.0" prefWidth="94.0" text="Submit" />
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

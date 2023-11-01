@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="invUsgAP" prefHeight="811.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.managerapp.InvUsageController">
+    <children>
+        <BorderPane prefHeight="811.0" prefWidth="807.0">
+            <center>
+                <VBox prefHeight="586.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="807.0" spacing="50.0">
+                            <children>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="339.0">
+                           <children>
+                               <Label prefHeight="63.0" prefWidth="96.0" text="Start Date:" />
+                              <TextField fx:id="startDateField" alignment="CENTER" prefHeight="25.0" prefWidth="183.0" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="64.0" prefWidth="321.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="98.0" text="End Date:" />
+                              <TextField fx:id="endDateField" alignment="CENTER" prefHeight="25.0" prefWidth="195.0" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="submitButton" alignment="CENTER" mnemonicParsing="false" prefHeight="23.0" prefWidth="150.0" text="Submit" />
+                            </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="100.0" />
+                     </padding>
+                        </HBox>
+                  <TableView fx:id="resultTable" prefHeight="753.0" prefWidth="807.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="402.6667175292969" text="Name" />
+                      <TableColumn fx:id="quantityCol" minWidth="0.0" prefWidth="403.99993896484375" text="Quantity Used" />
+                    </columns>
+                  </TableView>
+                    </children>
+                </VBox>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
